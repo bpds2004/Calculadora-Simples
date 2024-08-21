@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const display = document.querySelector('.display');
+    const screen = document.querySelector('.screen');
     const buttons = Array.from(document.querySelectorAll('button'));
 
     let currentInput = '';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (operator && operand1 !== '') {
                         operand2 = currentInput;
                         currentInput = operate(operand1, operand2, operator);
-                        display.value = currentInput;
+                        screen.value = currentInput;
                         operand1 = '';
                         operator = '';
                     }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (operator && operand1 !== '') {
                         operand2 = currentInput;
                         operand1 = operate(operand1, operand2, operator);
-                        display.value = operand1;
+                        screen.value = operand1;
                         currentInput = '';
                     }
                     operator = value;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     currentInput = '';
                 } else {
                     currentInput += value;
-                    display.value = currentInput;
+                    screen.value = currentInput;
                 }
             }
         });
